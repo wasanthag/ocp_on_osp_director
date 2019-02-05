@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 # Create the openshift_env.yaml file
 cat << EOF > $DOCS_DIR/openshift_env.yaml
-Parameter_defaults:
+parameter_defaults:
 # by default Director assigns the VIP random from the allocation pool
 # by using the FixedIPs we can set the VIPs to predictable IPs before starting the deployment
 
