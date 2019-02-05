@@ -9,7 +9,7 @@ CloudName: openshift.localdomain
 PublicVirtualFixedIPs: [{'ip_address':'192.168.122.100'}]
 
 CloudNameInternal: internal.openshift.localdomain
-InternalApiVirtualFixedIPs: [{'ip_address':'172.17.0.100'}]
+InternalApiVirtualFixedIPs: [{'ip_address':'172.17.1.100'}]
 
 CloudDomain: openshift.localdomain
 
