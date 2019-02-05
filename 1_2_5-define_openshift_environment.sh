@@ -9,7 +9,7 @@ CloudName: openshift.localdomain
 PublicVirtualFixedIPs: [{'ip_address':'192.168.122.100'}]
 
 CloudNameInternal: internal.openshift.localdomain
-InternalApiVirtualFixedIPs: [{'ip_address':'172.17.2.100'}]
+InternalApiVirtualFixedIPs: [{'ip_address':'172.17.0.100'}]
 
 CloudDomain: openshift.localdomain
 
@@ -26,8 +26,8 @@ CloudDomain: openshift.localdomain
 
 NtpServer: ["clock.redhat.com","clock2.redhat.com"]
 
-ControlPlaneDefaultRoute: 192.168.
-EC2MetadataIp: 192.168.24.1
+ControlPlaneDefaultRoute: 192.168.122.1
+EC2MetadataIp: 192.168.122.253
 ControlPlaneSubnetCidr: 24
 
 # The DNS server below should have entries for resolving {internal,public,apps}.openshift.localdomain names
