@@ -6,10 +6,10 @@ Parameter_defaults:
 # by using the FixedIPs we can set the VIPs to predictable IPs before starting the deployment
 
 CloudName: openshift.localdomain
-PublicVirtualFixedIPs: [{'ip_address':'10.0.0.200'}]
+PublicVirtualFixedIPs: [{'ip_address':'192.168.122.100'}]
 
 CloudNameInternal: internal.openshift.localdomain
-InternalApiVirtualFixedIPs: [{'ip_address':'172.17.1.200'}]
+InternalApiVirtualFixedIPs: [{'ip_address':'172.17.2.100'}]
 
 CloudDomain: openshift.localdomain
 
@@ -26,13 +26,13 @@ CloudDomain: openshift.localdomain
 
 NtpServer: ["clock.redhat.com","clock2.redhat.com"]
 
-ControlPlaneDefaultRoute: 192.168.24.1
+ControlPlaneDefaultRoute: 192.168.
 EC2MetadataIp: 192.168.24.1
 ControlPlaneSubnetCidr: 24
 
 # The DNS server below should have entries for resolving {internal,public,apps}.openshift.localdomain names
 DnsServers:
-   - 10.0.0.90
+   - 172.16.0.21
 
 OpenShiftGlobalVariables:
 
