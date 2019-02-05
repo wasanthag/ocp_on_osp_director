@@ -10,40 +10,96 @@ openstack flavor set --property "capabilities:profile"="OpenShiftInfra" --proper
 # Add your nodes to instackenv.json. You must define them to use the capabilities field.
 cat << EOF > $DOCS_DIR/instackenv.json
 {
-  "arch":"x86_64",
-  "cpu":"4",
-  "disk":"60",
-  "mac":[
-          "00:0c:29:9f:5f:05"
-  ],
-  "memory":"16384",
-  "pm_type":"ipmi",
-  "capabilities":"profile:OpenShiftMaster",
-  "name": "OpenShiftMaster_1"
-},
-{
-  "arch":"x86_64",
-  "cpu":"4",
-  "disk":"60",
-  "mac":[
-          "00:0c:29:91:b9:2d"
-  ],
-  "memory":"16384",
-  "pm_type":"ipmi",
-  "capabilities":"profile:OpenShiftWorker",
-  "name": "OpenShiftWorker_1"
-}
-{
-  "arch":"x86_64",
-  "cpu":"4",
-  "disk":"60",
-  "mac":[
-          "00:0c:29:91:b9:6a"
-  ],
-  "memory":"16384",
-  "pm_type":"ipmi",
-  "capabilities":"profile:OpenShiftInfra",
-  "name": "OpenShiftInfra_1"
+  "nodes": [
+    {
+      "pm_user": "admin",
+      "mac": [
+        "52:54:00:3f:12:6f"
+      ],
+      "pm_type": "pxe_ipmitool",
+      "pm_password": "redhat",
+      "pm_addr": "192.168.1.7",
+      "capabilities":"profile:OpenShiftMaster",
+      "name": "OpenShiftMaster_1"
+    },
+    {
+      "pm_user": "admin",
+      "mac": [
+        "52:54:00:0b:11:fa"
+      ],
+      "pm_type": "pxe_ipmitool",
+      "pm_password": "redhat",
+      "pm_addr": "192.168.1.8",
+      "capabilities":"profile:OpenShiftMaster",
+      "name": "OpenShiftMaster_2"
+    },
+    {
+      "pm_user": "admin",
+      "mac": [
+        "52:54:00:d0:4e:0a"
+      ],
+      "pm_type": "pxe_ipmitool",
+      "pm_password": "redhat",
+      "pm_addr": "192.168.1.9",
+      "capabilities":"profile:OpenShiftMaster",
+      "name": "OpenShiftMaster_3"
+    },
+    {
+      "pm_user": "admin",
+      "mac": [
+        "52:54:00:72:90:34"
+      ],
+      "pm_type": "pxe_ipmitool",
+      "pm_password": "redhat",
+      "pm_addr": "192.168.1.5",
+      "capabilities":"profile:OpenShiftWorker",
+      "name": "OpenShiftWorker_1"
+    },
+    {
+      "pm_user": "admin",
+      "mac": [
+        "52:54:00:3c:6a:79"
+      ],
+      "pm_type": "pxe_ipmitool",
+      "pm_password": "redhat",
+      "pm_addr": "192.168.1.6",
+      "capabilities":"profile:OpenShiftWorker",
+      "name": "OpenShiftWorker_2"
+    },
+    {
+      "pm_user": "admin",
+      "mac": [
+        "52:54:00:d4:08:38"
+      ],
+      "pm_type": "pxe_ipmitool",
+      "pm_password": "redhat",
+      "pm_addr": "192.168.1.1",
+      "capabilities":"profile:OpenShiftInfra",
+      "name": "OpenShiftInfra_1"
+    },
+    {
+      "pm_user": "admin",
+      "mac": [
+        "52:54:00:0d:aa:e4"
+      ],
+      "pm_type": "pxe_ipmitool",
+      "pm_password": "redhat",
+      "pm_addr": "192.168.1.2",
+      "capabilities":"profile:OpenShiftInfra",
+      "name": "OpenShiftInfra_2"
+    },
+    {
+      "pm_user": "admin",
+      "mac": [
+        "52:54:00:ef:b7:f7"
+      ],
+      "pm_type": "pxe_ipmitool",
+      "pm_password": "redhat",
+      "pm_addr": "192.168.1.3",
+      "capabilities":"profile:OpenShiftInfra",
+      "name": "OpenShiftInfra_3"
+    }
+  ]
 }
 EOF
 # Import and introspect the OCP nodes as your normally would for your deployment. For example:
